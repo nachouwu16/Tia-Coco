@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tía Coco · Costura artesanal</title>
+<meta name="description" content="Bolsos, totes y cartucheras hechos a mano con telas estampadas. Tía Coco, costura artesanal.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --fondo:#fff6f4; --rosa:#f9d9e0; --hilo:#d83f2a; --marino:#1f2a44; --kraft:#b98a5e; --texto:#2b2430; --blanco:#fff;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:'Nunito',system-ui,sans-serif;background:var(--fondo);color:var(--texto);line-height:1.6;font-size:1.05rem}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--marino);outline-offset:3px}
+.wrap{max-width:1100px;margin:0 auto;padding:0 1.25rem}
+h1,h2,h3{font-family:'Caprasimo',Georgia,serif;font-weight:400;line-height:1.1}
+
+header{position:sticky;top:0;z-index:5;background:var(--fondo);border-bottom:2px dashed var(--hilo)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:.7rem;padding-bottom:.7rem;gap:1rem}
+.logo{font-family:'Caprasimo',serif;font-size:1.6rem;text-decoration:none;color:var(--hilo)}
+nav{display:flex;gap:1.25rem;font-weight:600}
+nav a{text-decoration:none}
+nav a:hover{color:var(--hilo)}
+
+.hero{padding:3.5rem 0 3rem}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:2.5rem;align-items:center}
+.hero h1{font-size:clamp(2.6rem,7vw,4.8rem);color:var(--marino)}
+.hero p{margin:1.2rem 0 1.8rem;max-width:34rem}
+.btn{display:inline-block;background:var(--hilo);color:var(--blanco);font-weight:800;padding:.8rem 1.5rem;border-radius:999px;text-decoration:none;border:2px dashed var(--blanco);outline:2px solid var(--hilo);transition:transform .2s}
+.btn:hover{transform:rotate(-2deg) scale(1.03)}
+.btn.sec{background:var(--blanco);color:var(--hilo)}
+.hero-img{position:relative;border-radius:1.5rem;overflow:hidden;border:3px dashed var(--hilo);padding:.6rem;background:var(--blanco);transform:rotate(2deg);animation:entra .9s ease-out both}
+.hero-img img{border-radius:1rem;aspect-ratio:3/4;object-fit:cover;width:100%}
+@keyframes entra{from{opacity:0;transform:rotate(8deg) translateY(30px)}to{opacity:1;transform:rotate(2deg)}}
+
+section{padding:3.5rem 0}
+.titulo{font-size:clamp(2rem,5vw,3rem);color:var(--marino);margin-bottom:.5rem}
+.sub{margin-bottom:2rem;max-width:36rem}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1.75rem}
+.card{background:var(--blanco);border:2px dashed var(--kraft);border-radius:1.2rem;padding:.7rem;display:flex;flex-direction:column}
+.card:nth-child(even){border-color:var(--hilo)}
+.card img{border-radius:.8rem;aspect-ratio:3/4;object-fit:cover;width:100%;cursor:zoom-in}
+.card .info{padding:.9rem .4rem .4rem;display:flex;flex-direction:column;gap:.4rem;flex:1}
+.card h3{font-size:1.35rem;color:var(--marino)}
+.card p{font-size:.95rem}
+.precio{font-weight:800;color:var(--hilo);font-size:1.15rem}
+.card .btn{margin-top:auto;text-align:center;font-size:.95rem}
+
+.hecho{background:var(--rosa)}
+.hecho .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.hecho h3{font-size:1.3rem;margin-bottom:.4rem;color:var(--marino)}
+
+.contacto{text-align:center}
+.contacto .btn{margin:.4rem}
+footer{background:var(--marino);color:var(--rosa);text-align:center;padding:1.5rem 1rem;font-size:.9rem}
+
+#visor{position:fixed;inset:0;background:rgba(31,42,68,.9);display:none;align-items:center;justify-content:center;z-index:10;padding:1rem}
+#visor.on{display:flex}
+#visor img{max-height:92vh;border-radius:1rem}
+
+@media(max-width:760px){
+  .hero .wrap,.hecho .wrap{grid-template-columns:1fr}
+  .hero-img{max-width:340px;margin:0 auto}
+  nav{gap:.8rem;font-size:.95rem}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="#inicio">Tía Coco</a>
+    <nav aria-label="Principal">
+      <a href="#productos">Productos</a>
+      <a href="#hecho">Cómo lo hago</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Costura hecha a mano, puntada a puntada</h1>
+        <p>Bolsos, totes y cartucheras con telas estampadas que dan ganas de usar todos los días. Cada pieza se corta y se cose en mi taller.</p>
+        <a class="btn" href="#productos">Ver productos</a>
+      </div>
+      <div class="hero-img">
+        <img src="images/bandolera-girasoles.jpeg" alt="Bolso bandolera con estampa de girasoles y correas rojas">
+      </div>
+    </div>
+  </div>
+
+  <section id="productos">
+    <div class="wrap">
+      <h2 class="titulo">Lo que tengo hoy</h2>
+      <p class="sub">Toca una foto para verla en grande. Para pedir, escríbeme por WhatsApp.</p>
+      <div class="grid" id="lista"></div>
+    </div>
+  </section>
+
+  <section class="hecho" id="hecho">
+    <div class="wrap">
+      <div><h3>Hecho a mano</h3><p>Cada producto lo corto y lo coso yo, con costuras reforzadas para que dure.</p></div>
+      <div><h3>Telas con personalidad</h3><p>Elijo estampados alegres y combino colores para que cada pieza sea distinta.</p></div>
+      <div><h3>Juegos y pedidos especiales</h3><p>Muchos totes vienen con su cartuchera a juego. También puedes pedir tu combinación.</p></div>
+    </div>
+  </section>
+
+  <section class="contacto" id="contacto">
+    <div class="wrap">
+      <h2 class="titulo">¿Te gustó algo?</h2>
+      <p class="sub" style="margin-inline:auto">Cuéntame qué producto quieres y te respondo con disponibilidad y tiempos de entrega.</p>
+      <a class="btn" id="wa" href="#">Escribir por WhatsApp</a>
+      <a class="btn sec" id="ig" href="#">Ver Instagram</a>
+    </div>
+  </section>
+</main>
+
+<footer>© <span id="anio"></span> Tía Coco · Costura artesanal</footer>
+
+<div id="visor" role="dialog" aria-label="Foto ampliada"><img alt=""></div>
+
+<script>
+/* ====== EDITA ESTA SECCIÓN ====== */
+const WHATSAPP = "5491100000000";            // tu número con código de país, sin + ni espacios
+const INSTAGRAM = "https://instagram.com/tu_usuario";
+const PRODUCTOS = [
+  { nombre:"Bandolera girasoles", img:"images/bandolera-girasoles.jpeg",
+    alt:"Bolso bandolera con estampa de girasoles y mariposas, correas rojas",
+    desc:"Bolso con asas y correa ajustable, bolsillo frontal con cierre y bolsillos laterales.", precio:"$ 0.000" },
+  { nombre:"Tote rosa + cartuchera", img:"images/tote-rosa-matematica.jpeg",
+    alt:"Tote rosa con fórmulas matemáticas y cartuchera a juego",
+    desc:"Tote amplio con base a rayas y cartuchera con cierre a juego.", precio:"$ 0.000" },
+  { nombre:"Tote cómic espacial + cartuchera", img:"images/tote-comic-espacial.jpeg",
+    alt:"Tote con estampa de historieta y asas rayas, con cartuchera a juego",
+    desc:"Tote con asas de colores, forro azul marino y cartuchera con cierre.", precio:"$ 0.000" },
+  { nombre:"Tote floral vichy + cartuchera", img:"images/tote-floral-vichy.jpeg",
+    alt:"Tote con flores y tela vichy en tonos rosa y kraft, con cartuchera",
+    desc:"Tote con estampa floral, vichy y base a rayas, más cartuchera a juego.", precio:"$ 0.000" }
+];
+/* ================================ */
+
+const msg = t => `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(t)}`;
+document.getElementById('lista').innerHTML = PRODUCTOS.map(p => `
+  <article class="card">
+    <img src="${p.img}" alt="${p.alt}" loading="lazy">
+    <div class="info">
+      <h3>${p.nombre}</h3>
+      <p>${p.desc}</p>
+      <span class="precio">${p.precio}</span>
+      <a class="btn" href="${msg('Hola Tía Coco, me interesa: ' + p.nombre)}" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+    </div>
+  </article>`).join('');
+document.getElementById('wa').href = msg('Hola Tía Coco, quiero hacer una consulta.');
+document.getElementById('ig').href = INSTAGRAM;
+document.getElementById('anio').textContent = new Date().getFullYear();
+
+const visor = document.getElementById('visor'), vimg = visor.querySelector('img');
+document.getElementById('lista').addEventListener('click', e => {
+  if (e.target.tagName === 'IMG') { vimg.src = e.target.src; vimg.alt = e.target.alt; visor.classList.add('on'); }
+});
+visor.addEventListener('click', () => visor.classList.remove('on'));
+document.addEventListener('keydown', e => { if (e.key === 'Escape') visor.classList.remove('on'); });
+</script>
+</body>
+</html>
